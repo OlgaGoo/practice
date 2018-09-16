@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    # Buttons
+    <color name="active_button">#450c4d</color>
+    <color name="text_on_active_button">#FFFFFFFF</color>
+
+    # Text View
+    <color name="selected_text_background">#8f4a4a</color>
+    <color name="unselected_text_background">#a79a9a</color>
+    <color name="selected_text">#FFFF</color>
+    <color name="unselected_text">#000000</color>
 </resources>
