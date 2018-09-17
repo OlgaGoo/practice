@@ -17,4 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Active_Button">
+        <item name="android:textColor">@color/text_on_active_button</item>
+        <item name="android:textSize">40dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@color/active_button</item>
+    </style>
+
 </resources>
