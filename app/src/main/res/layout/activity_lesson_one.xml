@@ -4,14 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".homework.MainActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-    </android.support.design.widget.AppBarLayout>
+    tools:context=".homework.LessonOneActivity">
 
     <TextView
         android:id="@+id/textView"

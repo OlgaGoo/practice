@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">HomeWork</string>
-    <string name="title_activity_main">MainActivity</string>
+
 
     # Buttons
     <string name="inverse_button">inverse</string>
+    <string name="homeWork1">homework 1</string>
+    //Menu
+    <string name="homeWork2">homework 2</string>
+    //Menu
 
-    # TextViews
+    # Strings
     <string name="text_view_one">cat</string>
     <string name="text_view_two">dog</string>
+
+
+    # Activities
+    <string name="title_activity_start">Menu</string>
+    <string name="title_activity_lesson_one">Home Work 1</string>
 </resources>
