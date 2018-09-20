@@ -14,13 +14,22 @@
     <color name="selected_text">#FFFF</color>
     <color name="unselected_text">#000000</color>
 
-    #Basic Colors
+    #Flag Colors
     <color name="white">#ffffff</color>
-    <color name="red">#ff0000</color>
-    <color name="deep_red">#d50000</color>
-    <color name="green">#43a047</color>
-    <color name="yellow">#ffd600</color>
-    <color name="deep_blue">#304ffe</color>
+    <color name="thailand_white">#F4F5F8</color>
+    <color name="austria_red">#ED2939</color>
+    <color name="poland_red">#DC143C</color>
+    <color name="italy_red">#CE2B37</color>
+    <color name="denmark_red">#C60C30</color>
+    <color name="columbia_red">#CF0820</color>
+    <color name="madagascar_red">#FC3D32</color>
+    <color name="thailand_red">#A51931</color>
+    <color name="italy_green">#009246</color>
+    <color name="madagascar_green">#007E3A</color>
+    <color name="columbia_yellow">#FFD800</color>
+    <color name="columbia_blue">#002680</color>
+    <color name="thailand_blue">#2D2A4A</color>
+
 
 
 </resources>
