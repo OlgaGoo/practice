@@ -3,6 +3,7 @@ package com.olgagoo.debug.homework.homework_3;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,16 +13,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.olgagoo.debug.homework.R;
 import com.squareup.picasso.Picasso;
 
 public class LessonThreeActivity extends AppCompatActivity {
     public static final String EXTRA_IMAGE_URL = "EXTRA_IMAGE_URL";
-    ImageView image;
+    SimpleDraweeView frescoImage;
     EditText input;
     Button btnShowImage;
-    View.OnClickListener imageClk;
-    View.OnClickListener inputClk;
     View.OnClickListener btnShowImageClk;
 
     public static void showImage(Activity activity, String url) {
@@ -37,9 +38,10 @@ public class LessonThreeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
         setContentView(R.layout.activity_lesson_three);
 
-        image = (ImageView) findViewById(R.id.loaded_image);
+        frescoImage = (SimpleDraweeView) findViewById(R.id.fresco_image);
         input = (EditText) findViewById(R.id.link_input);
         btnShowImage = (Button) findViewById(R.id.show_image_btn);
 
@@ -51,10 +53,11 @@ public class LessonThreeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 restartActivity();
+                finish();
             }
         };
         btnShowImage.setOnClickListener(btnShowImageClk);
-        updateImageView(image,link);
+        updateImageView(frescoImage,link);
 
 
     }
@@ -67,9 +70,10 @@ public class LessonThreeActivity extends AppCompatActivity {
         LessonThreeActivity.showImage(LessonThreeActivity.this, String.valueOf(input.getText()));
     }
 
-    private void updateImageView(ImageView image,String link){
+    private void updateImageView(SimpleDraweeView image,String link){
         if(link != null){
-            Picasso.get().load(link).into(image);
+            Uri uri = Uri.parse(link);
+            image.setImageURI(uri);
         } else{
            return;
         }
