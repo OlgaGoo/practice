@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.drawable.ProgressBarDrawable;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.olgagoo.debug.homework.R;
 import com.squareup.picasso.Picasso;
@@ -74,6 +75,8 @@ public class LessonThreeActivity extends AppCompatActivity {
         if(link != null){
             Uri uri = Uri.parse(link);
             image.setImageURI(uri);
+            image.getHierarchy().setProgressBarImage(new ProgressBarDrawable());
+
         } else{
            return;
         }
