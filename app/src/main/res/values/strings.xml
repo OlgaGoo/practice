@@ -4,10 +4,13 @@
 
     # Buttons
     <string name="inverse_button">inverse</string>
+    <string name="show_image">show image</string>
+
+    //Menu
     <string name="homeWork1">homework 1</string>
-    //Menu
     <string name="homeWork2">homework 2</string>
-    //Menu
+    <string name="homeWork3">homework 3</string>
+
 
     # Strings
     <string name="text_view_one">cat</string>
@@ -17,4 +20,7 @@
     # Activities
     <string name="title_activity_start">Menu</string>
     <string name="title_activity_lesson_one">Home Work 1</string>
+
+    # Hints
+    <string name="image_link">Put your link</string>
 </resources>

@@ -24,4 +24,13 @@
         <item name="android:background">@color/active_button</item>
     </style>
 
+    <style name="InputFieldOnWhiteBackground">
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">#20000000</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingStart">5dp</item>
+    </style>
+
 </resources>

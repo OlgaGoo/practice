@@ -11,12 +11,15 @@ import android.widget.Button;
 
 import com.olgagoo.debug.homework.R;
 import com.olgagoo.debug.homework.homework.LessonOneActivity;
+import com.olgagoo.debug.homework.homework_3.LessonThreeActivity;
 
 public class StartActivity extends AppCompatActivity {
     Button hwOne;
     Button hwTwo;
+    Button hwThree;
     View.OnClickListener hwOneClk;
     View.OnClickListener hwTwoClk;
+    View.OnClickListener hwThreeClk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +28,11 @@ public class StartActivity extends AppCompatActivity {
 
         hwOne = (Button) findViewById(R.id.menu_btn1);
         hwTwo = (Button) findViewById(R.id.menu_btn2);
+        hwThree = (Button) findViewById(R.id.menu_btn3);
 
         final Intent lessonOneActivity = new Intent(this,LessonOneActivity.class);
         final Intent lessonTwoActivity = new Intent(this,LessonTwoActivity.class);
+        final Intent lessonThreeActivity = new Intent(this,LessonThreeActivity.class);
 
         hwOneClk = new View.OnClickListener() {
             @Override
@@ -43,8 +48,16 @@ public class StartActivity extends AppCompatActivity {
             }
         };
 
+        hwThreeClk = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(lessonThreeActivity);
+            }
+        };
+
         hwOne.setOnClickListener(hwOneClk);
         hwTwo.setOnClickListener(hwTwoClk);
+        hwThree.setOnClickListener(hwThreeClk);
 
     }
 }
