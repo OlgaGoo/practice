@@ -5,16 +5,19 @@
     # Buttons
     <string name="inverse_button">inverse</string>
     <string name="show_image">show image</string>
+    <string name="create_pie_diagram">crate pie chart</string>
 
     //Menu
     <string name="homeWork1">homework 1</string>
     <string name="homeWork2">homework 2</string>
     <string name="homeWork3">homework 3</string>
+    <string name="homeWork4">homework 4</string>
 
 
     # Strings
     <string name="text_view_one">cat</string>
     <string name="text_view_two">dog</string>
+    <string name="hint_pie_part">Set Value</string>
 
 
     # Activities

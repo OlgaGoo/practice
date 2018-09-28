@@ -13,6 +13,7 @@
     <color name="unselected_text_background">#a79a9a</color>
     <color name="selected_text">#FFFF</color>
     <color name="unselected_text">#000000</color>
+    <color name="input_fields">#20e0e0e0</color>
 
     #Flag Colors
     <color name="white">#ffffff</color>

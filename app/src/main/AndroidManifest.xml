@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.olgagoo.debug.homework">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".homework_3.CustomApplication"
@@ -24,7 +24,9 @@
         </activity>
         <activity android:name=".homework.LessonOneActivity" />
         <activity android:name=".homework_2.LessonTwoActivity" />
-        <activity android:name=".homework_3.LessonThreeActivity"></activity>
+        <activity android:name=".homework_3.LessonThreeActivity" />
+        <activity android:name=".homework_4.OwlActivity" />
+        <activity android:name=".homework_4.PieChartActivity"></activity>
     </application>
 
 </manifest>
