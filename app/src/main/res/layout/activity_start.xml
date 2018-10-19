@@ -47,4 +47,12 @@
         android:text="@string/homeWork5"
         />
 
+    <Button
+        android:id="@+id/menu_btn6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Active_Button"
+        android:text="@string/homeWork6"
+        />
+
 </LinearLayout>
