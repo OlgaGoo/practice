@@ -42,12 +42,12 @@ public class FragmentList extends android.app.Fragment{
         super.onCreate(savedInstanceState);
 
         contactList = new ArrayList<>();
-        contactList.add(new Contact("George", "Nillson", R.drawable.ic_image_black_24dp));
-        contactList.add(new Contact("Viktor", "Newman", R.drawable.ic_launcher_background));
-        contactList.add(new Contact("Poul", "Petterson", R.drawable.ic_image_black_24dp));
-        contactList.add(new Contact("Anna", "Poul", R.drawable.ic_launcher_background));
-        contactList.add(new Contact("Richard", "Castle", R.drawable.ic_image_black_24dp));
-        contactList.add(new Contact("Alex", "Mitch", R.drawable.ic_image_black_24dp));
+        contactList.add(new Contact("1a","George", "Nillson", R.drawable.ic_image_black_24dp));
+        contactList.add(new Contact("2b","Viktor", "Newman", R.drawable.ic_launcher_background));
+        contactList.add(new Contact("3c","Poul", "Petterson", R.drawable.ic_image_black_24dp));
+        contactList.add(new Contact("4d","Anna", "Poul", R.drawable.ic_launcher_background));
+        contactList.add(new Contact("5f","Richard", "Castle", R.drawable.ic_image_black_24dp));
+        contactList.add(new Contact("6g","Alex", "Mitch", R.drawable.ic_image_black_24dp));
 
     }
 }

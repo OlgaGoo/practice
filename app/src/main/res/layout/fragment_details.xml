@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/thailand_red"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_on_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="Name"
+            android:textColor="@color/unselected_text"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lastname_on_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Last Name"
+            android:textColor="@color/unselected_text"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+        
+        <Button
+            android:padding="20dp"
+            android:drawableLeft="@drawable/ic_mode_edit_black_24dp"
+            android:drawablePadding="20dp"
+            android:id="@+id/edit_info_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/active_button"
+            android:text="Edit Info"
+            android:textAlignment="textStart"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/delete_info_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/dialog_delete_black_24dp"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:text="Delete Info"
+            android:textAlignment="textStart"
+            android:textColor="@color/active_button" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dialog_photo"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_image_black_24dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+    
+
+</RelativeLayout>

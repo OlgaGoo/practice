@@ -4,12 +4,14 @@ public class Contact {
     private String name;
     private String lastname;
     private int photo;
+    private String id;
 
 
     public Contact(){
     }
 
-    public Contact(String name, String lastname, int photo) {
+    public Contact(String id, String name, String lastname, int photo) {
+        this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.photo = photo;
@@ -37,5 +39,13 @@ public class Contact {
 
     public void setPhoto(int photo) {
         this.photo = photo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

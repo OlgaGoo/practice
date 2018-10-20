@@ -1,12 +1,18 @@
 package com.olgagoo.debug.homework.homework_7;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.olgagoo.debug.homework.R;
 
@@ -16,6 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     Context mContext;
     List<Contact> data;
+    Dialog myDialog;
 
     public RecyclerViewAdapter(Context mContext, List<Contact> data) {
         this.mContext = mContext;
@@ -26,7 +33,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         view = LayoutInflater.from(mContext).inflate(R.layout.item_contact, parent, false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
+        final MyViewHolder myViewHolder = new MyViewHolder(view);
+
+        myDialog = new Dialog(mContext);
+        myDialog.setContentView(R.layout.fragment_details);
+        myDialog.getWindow().setBackgroundDrawable( new ColorDrawable(Color.TRANSPARENT));
+
+
+
+        myViewHolder.item_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView dialog_name = (TextView) myDialog.findViewById(R.id.name_on_details);
+                TextView dialod_last_name = (TextView) myDialog.findViewById(R.id.lastname_on_details);
+                Button edit_btn = (Button) myDialog.findViewById(R.id.edit_info_btn);
+                Button delete_btn = (Button) myDialog.findViewById(R.id.delete_info_btn);
+                ImageView photo = (ImageView) myDialog.findViewById(R.id.dialog_photo);
+                dialog_name.setText(data.get(myViewHolder.getAdapterPosition()).getName());
+                dialod_last_name.setText(data.get(myViewHolder.getAdapterPosition()).getLastname());
+                photo.setImageResource(data.get(myViewHolder.getAdapterPosition()).getPhoto());
+
+                Toast.makeText(mContext, "Click on " + String.valueOf(myViewHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+                myDialog.show();
+            }
+        });
+
         return myViewHolder;
     }
 
@@ -47,6 +78,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private TextView tvName;
         private TextView tvLastName;
         private ImageView tvPhoto;
+        private LinearLayout item_contact;
+
 
 
 
@@ -56,6 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             tvName = (TextView) itemView.findViewById(R.id.contact_name);
             tvLastName = (TextView) itemView.findViewById(R.id.contact_last_name);
             tvPhoto = (ImageView) itemView.findViewById(R.id.contact_image);
+            item_contact = (LinearLayout) itemView.findViewById(R.id.item_contact);
         }
     }
 }
