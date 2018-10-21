@@ -1,6 +1,7 @@
 package com.olgagoo.debug.homework.homework_7;
 
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -22,7 +23,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     Context mContext;
     List<Contact> data;
-    Dialog myDialog;
 
     public RecyclerViewAdapter(Context mContext, List<Contact> data) {
         this.mContext = mContext;
@@ -35,26 +35,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         view = LayoutInflater.from(mContext).inflate(R.layout.item_contact, parent, false);
         final MyViewHolder myViewHolder = new MyViewHolder(view);
 
-        myDialog = new Dialog(mContext);
-        myDialog.setContentView(R.layout.fragment_details);
-        myDialog.getWindow().setBackgroundDrawable( new ColorDrawable(Color.TRANSPARENT));
-
-
 
         myViewHolder.item_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView dialog_name = (TextView) myDialog.findViewById(R.id.name_on_details);
-                TextView dialod_last_name = (TextView) myDialog.findViewById(R.id.lastname_on_details);
-                Button edit_btn = (Button) myDialog.findViewById(R.id.edit_info_btn);
-                Button delete_btn = (Button) myDialog.findViewById(R.id.delete_info_btn);
-                ImageView photo = (ImageView) myDialog.findViewById(R.id.dialog_photo);
-                dialog_name.setText(data.get(myViewHolder.getAdapterPosition()).getName());
-                dialod_last_name.setText(data.get(myViewHolder.getAdapterPosition()).getLastname());
-                photo.setImageResource(data.get(myViewHolder.getAdapterPosition()).getPhoto());
-
                 Toast.makeText(mContext, "Click on " + String.valueOf(myViewHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-                myDialog.show();
+
+                FragmentDetails fragmentDetails = new FragmentDetails();
+
+                fragmentDetails.showDetails(
+                        fragmentDetails,
+                        data.get(myViewHolder.getAdapterPosition()).getId(),
+                        data.get(myViewHolder.getAdapterPosition()).getName(),
+                        data.get(myViewHolder.getAdapterPosition()).getLastname(),
+                        data.get(myViewHolder.getAdapterPosition()).getPhoto());
             }
         });
 

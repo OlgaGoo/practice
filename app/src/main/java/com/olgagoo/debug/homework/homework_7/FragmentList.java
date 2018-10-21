@@ -13,10 +13,11 @@ import android.view.ViewGroup;
 
 import com.olgagoo.debug.homework.R;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentList extends android.app.Fragment{
+public class FragmentList extends Fragment{
     View view;
     private RecyclerView myRcView;
     private List<Contact> contactList;
@@ -50,4 +51,22 @@ public class FragmentList extends android.app.Fragment{
         contactList.add(new Contact("6g","Alex", "Mitch", R.drawable.ic_image_black_24dp));
 
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        try {
+            Field childFragmentManager = android.app.Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }
