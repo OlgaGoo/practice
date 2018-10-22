@@ -30,18 +30,15 @@ public class ContactsList extends AppCompatActivity {
         fargment_one = new FragmentList();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.frgmCont,fargment_one);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
 
-    public void replaceFragment(){
+    public void replaceFragment(Fragment fragment){
         fragmentTransaction = fragmentManager.beginTransaction();
-        fargment_two = new FragmentDetails();
-        fragmentTransaction.replace(R.id.frgmCont,fargment_two);
+        fragmentTransaction.replace(R.id.frgmCont,fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-
     }
 
 

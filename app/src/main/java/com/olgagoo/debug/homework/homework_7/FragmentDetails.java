@@ -38,7 +38,7 @@ public class FragmentDetails extends android.support.v4.app.Fragment {
     public static final String PHOTO = "PHOTO";
 
 
-    public void showDetails(android.support.v4.app.Fragment fragment, String id, String name, String lastName, int photo) {
+    public static void showDetails(ContactsList activity, android.support.v4.app.Fragment fragment, String id, String name, String lastName, int photo) {
 
         Bundle bundle = new Bundle();
 
@@ -49,8 +49,7 @@ public class FragmentDetails extends android.support.v4.app.Fragment {
 
         fragment.setArguments(bundle);
 
-        ContactsList list = new ContactsList();
-        list.replaceFragment();
+        activity.replaceFragment(fragment);
 
     }
 
@@ -59,13 +58,6 @@ public class FragmentDetails extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_details, container, false);
-        return view;
-
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         nameField = (TextView) view.findViewById(R.id.name_on_details);
         lastNameField = (TextView) view.findViewById(R.id.lastname_on_details);
         photoView = (ImageView) view.findViewById(R.id.dialog_photo);
@@ -73,23 +65,14 @@ public class FragmentDetails extends android.support.v4.app.Fragment {
         nameField.setText(getArguments().getString(NAME));
         lastNameField.setText(getArguments().getString(LAST_NAME));
         photoView.setImageResource(getArguments().getInt(PHOTO));
+        return view;
 
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        try {
-            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
-            childFragmentManager.setAccessible(true);
-            childFragmentManager.set(this, null);
-
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 }

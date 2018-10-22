@@ -1,6 +1,8 @@
 package com.olgagoo.debug.homework.homework_7;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.app.ListActivity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Color;
@@ -21,29 +23,30 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
-    Context mContext;
+    ContactsList mActivity;
     List<Contact> data;
 
-    public RecyclerViewAdapter(Context mContext, List<Contact> data) {
-        this.mContext = mContext;
+    public RecyclerViewAdapter(ContactsList activity, List<Contact> data) {
+        this.mActivity = activity;
         this.data = data;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
-        view = LayoutInflater.from(mContext).inflate(R.layout.item_contact, parent, false);
+        view = LayoutInflater.from(mActivity).inflate(R.layout.item_contact, parent, false);
         final MyViewHolder myViewHolder = new MyViewHolder(view);
 
 
         myViewHolder.item_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "Click on " + String.valueOf(myViewHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity, "Click on " + String.valueOf(myViewHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
 
                 FragmentDetails fragmentDetails = new FragmentDetails();
 
                 fragmentDetails.showDetails(
+                        mActivity,
                         fragmentDetails,
                         data.get(myViewHolder.getAdapterPosition()).getId(),
                         data.get(myViewHolder.getAdapterPosition()).getName(),

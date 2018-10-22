@@ -32,7 +32,7 @@ public class FragmentList extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_contacts_list, container,false);
         myRcView = (RecyclerView) view.findViewById(R.id.contact_rc_view);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getActivity(),contactList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((ContactsList) getActivity(),contactList);
         myRcView.setLayoutManager( new LinearLayoutManager(getActivity()));
         myRcView.setAdapter(recyclerViewAdapter);
         return view;
@@ -49,23 +49,6 @@ public class FragmentList extends Fragment{
         contactList.add(new Contact("4d","Anna", "Poul", R.drawable.ic_launcher_background));
         contactList.add(new Contact("5f","Richard", "Castle", R.drawable.ic_image_black_24dp));
         contactList.add(new Contact("6g","Alex", "Mitch", R.drawable.ic_image_black_24dp));
-
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-
-        try {
-            Field childFragmentManager = android.app.Fragment.class.getDeclaredField("mChildFragmentManager");
-            childFragmentManager.setAccessible(true);
-            childFragmentManager.set(this, null);
-
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
